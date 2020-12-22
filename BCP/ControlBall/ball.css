@@ -1,0 +1,17 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+table {
+    background-color: chocolate;
+    border-radius: 50%;
+    position: relative;
+    left: 0px;
+    top: 300px;
+}
+
+button {
+    padding: 5px;
+    color: coral
+}

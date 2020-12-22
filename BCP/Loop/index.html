@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = 100;
+        for (let i = 1; i <= n; i++) {
+            if (i % 5 == 0) {
+                document.write(`${i}, `);
+                // document.write(i + ', ');
+            }
+        }
+        document.write(`<br>`);
+        let i = 1;
+        for (; i <= n; i++) {
+            if (i % 5 == 0) {
+                document.write(`${i}, `);
+            }
+        }
+        document.write(`<br>`);
+        let j = 1;
+        for (; j <= n;) {
+            if (j % 5 == 0) {
+                document.write(`${j}, `);
+            }
+            j++;
+        }
+        document.write(`<br>`);
+        for (let i = 5; i <= n; i += 5) {
+            document.write(`${i}, `);
+        }
+        document.write(`<br>`);
+        for (let i = n; i > 0; i -= 5) {
+            document.write(`${i}, `);
+        }
+        document.write(`<br>`);
+        for (let i = n; i > 0; i -= 5) {
+            document.write(`${n-i+5}, `);
+        }
+        document.write(`<br>`);
+        for (let i = 1; i <= n; i++) {
+            if (i % 5 != 0)
+                continue;
+            document.write(`${i}, `);
+        }
+
+        let k = 1;
+        while (k <= n) {
+            if (k % 5 == 0) {
+                document.write(`${k}, `);
+            }
+            k++;
+        }
+
+        let t = 0;
+        while (t <= n) {
+            t++;
+            if (t % 5 != 0)
+                continue;
+            document.write(`${t}, `);
+
+        }
+
+        let f = 0;
+        while (++f <= n) {
+            if (f % 5 == 0) {
+                document.write(`${f}, `);
+            }
+        }
+
+        let y = 0;
+        while (y < n) {
+            y += 5;
+            document.write(`${y}, `);
+        }
+
+        let m = 0;
+        do {
+            m += 5;
+            document.write(`${m}, `);
+        }
+        while (m < n);
+
+        // let number = 0;
+        // do {
+        //     number = Number(prompt("n = "));
+        // }
+        // // while (isNaN(number) || parseInt(number) != number)
+        // while (isNaN(number) || !Number.isInteger(number))
+
+        // let n1 = Number(prompt("n = "));
+        // while (isNaN(n1) || !Number.isInteger(n1)) {
+        //     n1 = Number(prompt("n = "));
+        // }
+
+        let n2 = Number(prompt("n = "));
+        for (; isNaN(n2) || !Number.isInteger(n2);) {
+            n2 = Number(prompt("n = "));
+        }
+    </script>
+</body>
+
+</html>
