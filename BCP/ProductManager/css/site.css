@@ -1,0 +1,78 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    max-width: 900px;
+}
+
+.row {
+    width: 100%;
+}
+
+.add-product {
+    background-color: brown;
+    width: 60%;
+    display: block;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input {
+    padding: 8px 10px;
+}
+
+.btn {
+    text-decoration: none;
+    border: 1px solid gray;
+    padding: 8px;
+    color: white;
+    background-color: gray;
+    border-radius: 3px;
+}
+
+.btn-success {
+    background-color: green;
+    border: 1px solid green;
+}
+
+.btn-warning {
+    background-color: yellow;
+    color: tomato;
+}
+
+.table {
+    width: 100%;
+}
+
+tr,
+th,
+td {
+    padding: 10px;
+}
+
+.table-bordered,
+tr,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.thead-dark {
+    background-color: brown;
+    color: white;
+}
+
+.table>tbody>tr:nth-child(2n) {
+    background-color: turquoise;
+}
+
+.table>tbody {
+    cursor: pointer;
+}
+
+.table>tbody>tr:hover {
+    background-color: violet;
+}
