@@ -76,3 +76,7 @@ td {
 .table>tbody>tr:hover {
     background-color: violet;
 }
+
+.d-none {
+    display: none;
+}
