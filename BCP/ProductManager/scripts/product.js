@@ -1,4 +1,22 @@
-let products = ["IP 6s", "Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4"];
+// let products = ["IP 6s", "Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4"];
+class Product {
+    constructor(name, price, quanlity, manufactory) {
+        this.name = name;
+        this.price = price;
+        this.quanlity = quanlity;
+        this.manufactory = manufactory;
+    }
+}
+let products = [];
+
+if (window.localStorage.getItem("products") != null) {
+    products = JSON.parse(window.localStorage.getItem("products"));
+} else {
+    // window.localStorage.setItem("products", JSON.stringify(["IP 6s", "Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4"]));
+    let ip6 = new Product("IP 6s", 5000000, 3, "ThaiLand");
+    let ip7 = new Product("IP 7s", 7500000, 7, "ThaiLand");
+    window.localStorage.setItem("products", JSON.stringify(products));
+}
 
 function showProduct() {
     let body = document.getElementById("tbProduct");
@@ -6,7 +24,10 @@ function showProduct() {
     for (let i = 0; i < products.length; i++) {
         body.innerHTML += `
                     <tr id='tr_${i}'>
-                        <td>${products[i]}</td>
+                        <td>${products[i].name}</td>
+                        <td>${products[i].price}</td>
+                        <td>${products[i].quanlity}</td>
+                        <td>${products[i].manufactory}</td>
                         <td>
                             <a href="javascript:;" class="btn btn-success" onclick='changeProduct(${i})'>Edit</a>
                             <a href="javascript:;" class="btn btn-success" onclick='getProduct(${i})'>Update</a>
@@ -33,7 +54,9 @@ function addProduct() {
             if (id != -1) {
                 products[id] = pn;
             } else {
-                products.push(pn);
+                let pdt = new Product("ABD", 2500000, 10, "VietName")
+                products.push(pdt);
+                window.localStorage.setItem("products", JSON.stringify(products));
             }
 
             showProduct();
@@ -50,7 +73,7 @@ function addProduct() {
 function isExistProduct(pn) {
     pn = formatString(pn);
     for (let p of products) {
-        if (p.toLowerCase() == pn.toLowerCase()) {
+        if (p.name.toLowerCase() == pn.toLowerCase()) {
             return true;
         }
     }
